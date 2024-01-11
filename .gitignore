@@ -1,1 +1,4 @@
 node_modules
+dist/main.js
+dist/output.css
+dist/output.css.map
