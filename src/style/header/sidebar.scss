@@ -1,0 +1,71 @@
+@use '../variables/colors.scss';
+@use './hamburger.scss' as *;
+
+.sidebar {
+  background-color: colors.$sidebar-background;
+  width: 0vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  color: colors.$sidebar-color;
+  font-size: 27px;
+  transition: width 0.7s;
+  overflow: hidden;
+}
+nav {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.extend {
+  width: 100vw;
+}
+
+.sidebar__menu-btn {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: colors.$sidebar-color;
+}
+
+.sidebar__list {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s;
+  color: inherit;
+  margin: 0px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: end;
+  align-items: end;
+}
+
+.sidebar.extend .sidebar__list {
+  opacity: 1;
+}
+
+.sidebar__menu-btn {
+  position: fixed;
+  top: 30px;
+  left: 25px;
+  width: 30px;
+  height: 20px;
+  @extend %btn--hamburger;
+  font-size: 0px;
+  border: none;
+}
+
+.menu-btn-decoration {
+  @extend %span--decoration;
+  background: colors.$sidebar-background;
+  border-radius: 9px;
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+}

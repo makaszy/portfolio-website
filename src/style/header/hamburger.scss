@@ -1,0 +1,66 @@
+%btn--hamburger {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+%span--decoration {
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+//button animation
+
+%span--decoration:nth-child(1) {
+  top: 0%;
+}
+
+%span--decoration:nth-child(2) {
+  top: 50%;
+}
+
+%span--decoration:nth-child(3) {
+  top: 100%;
+} 
+%btn--hamburger.open {
+  background-color: black;
+}
+%btn--hamburger.open %span--decoration:nth-child(2) {
+  width: 0%;
+  left: 50%;
+}
+
+%btn--hamburger.open %span--decoration:nth-child(1) {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg); 
+  transform: rotate(135deg);
+  background-color: white;
+  top: 50%;
+ 
+}
+
+%btn--hamburger.open %span--decoration:nth-child(3) {
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  transform-origin: center;
+  border-radius: 1px;
+  top: 50%;
+  background-color: white; 
+}
