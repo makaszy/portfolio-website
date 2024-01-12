@@ -27,7 +27,7 @@ nav {
 
 .sidebar__btn-div {
   position: fixed;
-  top: 30px;
+  top: 27px;
   left: 25px;
   width: 30px;
   height: 20px;
@@ -38,15 +38,6 @@ nav {
   font-size: 0px;
   border: none;
 }
-
-
- 
-
-
-
-
-
-
 
 .sidebar__list {
   white-space: nowrap;
@@ -66,6 +57,17 @@ nav {
   opacity: 1;
 }
 
+ .nav__link {
+  padding-bottom: 5px; //for linear gradient space
+  text-decoration: none;
+  background-image: linear-gradient(white, white);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
 
+}
 
-
+.nav__link:hover, .nav__link:focus {
+  background-size: 100% 3px;
+}
