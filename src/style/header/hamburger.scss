@@ -1,0 +1,78 @@
+@use '../variables/colors.scss';
+
+$hamburger-line-height: 5px; // the weight of the line
+$hamburger-line-radius: 9px;
+$hamburger-line-width: 100%; // determined by the div containing the hamburger btn
+$closed-color: colors.$sidebar-background;
+$open-color: colors.$sidebar-color;
+$open-middle-bar-color: colors.$sidebar-background; //for hiding the middle bar when open
+
+%btn--hamburger {
+  position: absolute;
+  top: 50%;
+  background-color: $closed-color;
+  height: $hamburger-line-height;
+  width: $hamburger-line-width;
+  border-radius: $hamburger-line-radius;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+%btn--hamburger.open {
+  background-color: $open-middle-bar-color;
+}
+
+%btn--hamburger::before {
+  top: -10px;
+}
+
+%btn--hamburger::after {
+  top: 10px;
+}
+
+%btn--hamburger::before,
+%btn--hamburger::after {
+  content: ' ';
+  position: absolute;
+  left: 0px;
+  background: $closed-color;
+  border-radius: $hamburger-line-radius;
+  display: block;
+  position: absolute;
+  height: $hamburger-line-height;
+  width: $hamburger-line-width;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+%btn--hamburger.open::before,
+%btn--hamburger.open::after {
+  background-color: $open-color;
+  top: 50%;
+}
+
+%btn--hamburger.open::before {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+%btn--hamburger.open::after {
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
