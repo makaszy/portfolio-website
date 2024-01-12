@@ -2,6 +2,7 @@
 @use './hamburger.scss' as *;
 
 .sidebar {
+  position: fixed;
   background-color: colors.$sidebar-background;
   width: 0vw;
   height: 100vh;
@@ -13,6 +14,7 @@
   font-size: 27px;
   transition: width 0.7s;
   overflow: hidden;
+  z-index: 2; //to prevent marquee from overlapping
 }
 
 nav {

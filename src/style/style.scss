@@ -1,4 +1,18 @@
-@use 'normalize.scss';
-@use './header/sidebar.scss';
+//general
 @use './variables/colors.scss';
+@use 'normalize.scss';
+//header
+@use './header/sidebar.scss';
+//landing page;
+@use './landing-page/landing-page.scss';
+@use './landing-page/marquee.scss';
 
+@use '../style/variables/font.scss' as *;
+
+html,
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  font-family: $font;
+}
