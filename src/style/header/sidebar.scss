@@ -14,7 +14,7 @@
   font-size: 27px;
   transition: width 0.7s;
   overflow: hidden;
-  z-index: 2; //to prevent marquee from overlapping
+  z-index: 8; //to prevent marquee from overlapping
 }
 
 nav {
