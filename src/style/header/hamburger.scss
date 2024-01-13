@@ -6,14 +6,16 @@ $hamburger-line-width: 100%; // determined by the div containing the hamburger b
 $closed-color: colors.$sidebar-background;
 $open-color: colors.$sidebar-color;
 $open-middle-bar-color: colors.$sidebar-background; //for hiding the middle bar when open
+$border: colors.$sidebar-color;
 
 %btn--hamburger {
   position: absolute;
-  top: 50%;
+  box-sizing: border-box;
   background-color: $closed-color;
   height: $hamburger-line-height;
   width: $hamburger-line-width;
   border-radius: $hamburger-line-radius;
+  border: 1px solid $border; 
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -26,6 +28,7 @@ $open-middle-bar-color: colors.$sidebar-background; //for hiding the middle bar 
 
 %btn--hamburger.open {
   background-color: $open-middle-bar-color;
+  border: none;
 }
 
 %btn--hamburger::before {
@@ -33,14 +36,14 @@ $open-middle-bar-color: colors.$sidebar-background; //for hiding the middle bar 
 }
 
 %btn--hamburger::after {
-  top: 10px;
+  top: 9px;
 }
 
 %btn--hamburger::before,
 %btn--hamburger::after {
+  box-sizing: border-box;
+  border: 1px solid $border;
   content: ' ';
-  position: absolute;
-  left: 0px;
   background: $closed-color;
   border-radius: $hamburger-line-radius;
   display: block;
