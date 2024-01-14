@@ -1,12 +1,7 @@
-/* $width: 30%;
-$max-width: 300px; */
-//runs with marquee function in js/landing-page
 %marquee-container { 
   white-space: nowrap;
   overflow: hidden;
   position: relative;
-/*   width: $width;
-  max-width: $max-width; */
 }
 
 %marquee-text {
