@@ -361,7 +361,9 @@ template {
 }
 
 ul {
-  list-style-type: none; /* Removes bullets from unordered lists */
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px; /* Removes bullets from unordered lists */
 }
 
 ol {
