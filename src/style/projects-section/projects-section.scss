@@ -29,8 +29,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10% 0%;
-  gap: 20px;
+  padding: 100px 0%;
+  gap: 100px;
 }
 .project-list__li {
   position: relative;
@@ -66,7 +66,7 @@
   position: relative;
   max-width: 100%;
   border: 2px solid $black;
-  transition: 0.5s;
+  transition: all 0.5s;
   border-radius: 5px 40px 40px 40px;
 }
 
@@ -97,4 +97,30 @@
 .project-list__li:hover .project--alt-position .project__img {
   rotate: 3deg;
   border-radius: 40px;
+}
+
+/* hidden */
+.hidden, .hidden--alt {
+  opacity: 0;
+  filter: blur(2px);
+  transition: all 1s;
+}
+.hidden {
+  transform: translateX(-100%);
+}
+
+.hidden--alt {
+  transform: translateX(100%);
+}
+
+.show {
+  opacity: 1;
+  filter:blur(0);
+  transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
 }
