@@ -9,7 +9,7 @@ function getNewAnimationDuration(marquee, marqueeText) {
   const duration = (marqueeWidth + textWidth) / speed;
 
   // Apply the duration to the animation
-  const newAnimationDuration = `${duration}s`
+  const newAnimationDuration = `${duration}s`;
   return newAnimationDuration;
 }
 

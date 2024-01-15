@@ -4,7 +4,7 @@
 .landing-page__marquee {
   @extend %marquee-container;
   position: absolute;
-  top:  26px;
+  top: 26px;
   right: 15px;
   z-index: 6;
   width: 30%;
@@ -29,7 +29,7 @@
 }
 
 .landing-page__header {
- font-size: 33px;
+  font-size: 33px;
   z-index: 2;
   -webkit-text-fill-color: colors.$sidebar-color;
   -webkit-text-stroke-width: 1px;
@@ -47,5 +47,4 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: colors.$sidebar-color;
   -webkit-text-fill-color: colors.$sidebar-background;
-
 }
