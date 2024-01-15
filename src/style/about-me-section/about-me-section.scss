@@ -1,0 +1,33 @@
+@use '../variables/colors.scss' as *;
+@use '../utils/marquee.scss' as *;
+
+.section--about {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $black
+}
+
+.about__marquee {
+  @extend %marquee-container;
+  background-color: $pink;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-top: 2px solid $black;
+  border-bottom: 2px solid $black;
+}
+.marquee-text--about {
+  @extend %marquee-text;
+  font-size: 28px;
+  -webkit-text-fill-color: $white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $white;
+}
+.marquee-text--about :nth-child(even) {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $white;
+}
