@@ -1,14 +1,15 @@
 //general
 @use './variables/colors.scss';
 @use 'normalize.scss';
+@use './utils/marquee.scss';
 //header
 @use './header/sidebar.scss';
 //landing page;
 @use './landing-page/landing-page.scss';
-@use './landing-page/marquee.scss';
 @use './landing-page/background-fluid.scss';
 @use '../style/variables/font.scss' as *;
 @use './landing-page/background-noise.scss';
+@use "./projects-section/projects-section.scss";
 
 html,
 body {
@@ -16,12 +17,6 @@ body {
   width: 100%;
   height: 100%;
   font-family: $font;
-  overflow-x: hidden;
 }
-
-
-
-
-
 
  
