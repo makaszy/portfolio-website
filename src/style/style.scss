@@ -9,7 +9,7 @@
 @use './landing-page/background-fluid.scss';
 @use '../style/variables/font.scss' as *;
 @use './landing-page/background-noise.scss';
-@use "./projects-section/projects-section.scss";
+@use './projects-section/projects-section.scss';
 
 html,
 body {
@@ -18,5 +18,3 @@ body {
   height: 100%;
   font-family: $font;
 }
-
- 
