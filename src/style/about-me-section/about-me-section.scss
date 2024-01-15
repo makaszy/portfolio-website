@@ -64,3 +64,20 @@
   text-align: justify;
   max-width: 75%;
 }
+.info__tech {
+  min-width: 75%;
+}
+
+.tech-list {
+  display: grid ;
+  grid-template-columns: repeat( auto-fit, minmax(75px, 1fr));
+  gap: 5%;
+}
+
+.tech-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
