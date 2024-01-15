@@ -70,14 +70,23 @@
 
 .tech-list {
   display: grid ;
-  grid-template-columns: repeat( auto-fit, minmax(75px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 5%;
 }
 
-.tech-list li {
+.tech-list__li {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+}
+
+.tech-list__li:nth-child(2n) {
+  transition-delay: 200ms;
+}
+
+.tech-list__li:nth-child(3n) {
+  transition-delay: 400ms;
 }
