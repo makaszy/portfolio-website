@@ -1,4 +1,5 @@
 import getNewAnimationDuration from '../utils/update-marquee-animation';
+import createObserver from '../utils/create-observer';
 
 function updateMarqueeAnimation() {
   const marquee = document.querySelector('.projects__marquee');
@@ -9,15 +10,7 @@ function updateMarqueeAnimation() {
   );
 }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-});
+const observer = createObserver('show');
 
 const hiddenElements = document.querySelectorAll('.hidden');
 const altHiddenElements = document.querySelectorAll('.hidden--alt');
