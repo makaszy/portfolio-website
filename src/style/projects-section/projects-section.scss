@@ -103,28 +103,25 @@
 }
 
 /* hidden */
-.hidden,
-.hidden--alt {
+.hidden--projects {
   opacity: 0;
   filter: blur(2px);
   transition: all 1s;
-}
-.hidden {
   transform: translateX(-100%);
 }
 
-.hidden--alt {
+.hidden--projects:nth-of-type(even) {
   transform: translateX(100%);
 }
 
 .show {
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 
 @media (prefers-reduced-motion) {
-  .hidden {
+  .hidden--projects {
     transition: none;
   }
 }

@@ -12,10 +12,8 @@ function updateMarqueeAnimation() {
 
 const observer = createObserver('show');
 
-const hiddenElements = document.querySelectorAll('.hidden');
-const altHiddenElements = document.querySelectorAll('.hidden--alt');
+const hiddenElements = document.querySelectorAll('.hidden--projects');
 hiddenElements.forEach((el) => observer.observe(el));
-altHiddenElements.forEach((el) => observer.observe(el));
 
 updateMarqueeAnimation(); // initial render
 
