@@ -114,12 +114,6 @@
   transform: translateX(100%);
 }
 
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0) !important;
-}
-
 @media (prefers-reduced-motion) {
   .hidden--projects {
     transition: none;
