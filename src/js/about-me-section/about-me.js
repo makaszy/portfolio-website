@@ -25,9 +25,9 @@ const lastTechListItem = document.querySelector('.tech-list__li:last-child');
 const observerSidebarBtn = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      sidebarBtn.classList.add('.override-color--sidebar-btn');
+      sidebarBtn.classList.add('override-color--sidebar-btn');
     } else {
-      sidebarBtn.classList.remove('.override-color--sidebar-btn');
+      sidebarBtn.classList.remove('override-color--sidebar-btn');
     }
   });
 });
