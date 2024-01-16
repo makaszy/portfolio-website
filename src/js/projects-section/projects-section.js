@@ -1,6 +1,8 @@
 import getNewAnimationDuration from '../utils/update-marquee-animation';
 import createObserver from '../utils/create-observer';
 
+// marquee
+
 function updateMarqueeAnimation() {
   const marquee = document.querySelector('.projects__marquee');
   const marqueeText = document.querySelector('.marquee-text--projects');
@@ -10,11 +12,11 @@ function updateMarqueeAnimation() {
   );
 }
 
-const observer = createObserver('show');
-
-const hiddenElements = document.querySelectorAll('.hidden--projects');
-hiddenElements.forEach((el) => observer.observe(el));
-
 updateMarqueeAnimation(); // initial render
-
 window.addEventListener('resize', updateMarqueeAnimation);
+
+// observer for sliding animation
+
+const observerProjects = createObserver('show');
+const hiddenElements = document.querySelectorAll('.hidden--projects');
+hiddenElements.forEach((el) => observerProjects.observe(el));
