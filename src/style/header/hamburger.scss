@@ -8,6 +8,7 @@ $open-color: colors.$sidebar-color;
 $open-middle-bar-color: colors.$sidebar-background; //for hiding the middle bar when open
 $border: colors.$sidebar-color;
 
+
 %btn--hamburger {
   position: absolute;
   box-sizing: border-box;
@@ -20,10 +21,10 @@ $border: colors.$sidebar-color;
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 %btn--hamburger.open {
@@ -44,12 +45,12 @@ $border: colors.$sidebar-color;
   box-sizing: border-box;
   border: 1px solid $border;
   content: ' ';
-  background: $closed-color;
-  border-radius: $hamburger-line-radius;
+  background: inherit;
+  border-radius: inherit;
   display: block;
   position: absolute;
-  height: $hamburger-line-height;
-  width: $hamburger-line-width;
+  height: inherit;
+  width: inherit;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -57,12 +58,13 @@ $border: colors.$sidebar-color;
   -webkit-transition: 0.25s ease-in-out;
   -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
+  transition:  0.25s ease-in-out;
 }
 
 %btn--hamburger.open::before,
 %btn--hamburger.open::after {
   background-color: $open-color;
+  border-color: $open-middle-bar-color;
   top: 50%;
 }
 

@@ -3,7 +3,8 @@
 
 .section--projects {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .projects__marquee {
@@ -17,6 +18,7 @@
   border-top: 2px solid $black;
   border-bottom: 2px solid $black;
 }
+
 .marquee-text--projects {
   font-size: 28px;
   color: $pink;
@@ -32,6 +34,7 @@
   padding: 100px 0%;
   gap: 100px;
 }
+
 .project-list__li {
   position: relative;
   z-index: 6;
@@ -100,28 +103,19 @@
 }
 
 /* hidden */
-.hidden,
-.hidden--alt {
+.hidden--projects {
   opacity: 0;
   filter: blur(2px);
   transition: all 1s;
-}
-.hidden {
   transform: translateX(-100%);
 }
 
-.hidden--alt {
+.hidden--projects:nth-of-type(even) {
   transform: translateX(100%);
 }
 
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
-}
-
 @media (prefers-reduced-motion) {
-  .hidden {
+  .hidden--projects {
     transition: none;
   }
 }

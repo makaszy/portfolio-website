@@ -1,4 +1,7 @@
 import getNewAnimationDuration from '../utils/update-marquee-animation';
+import createObserver from '../utils/create-observer';
+
+// marquee
 
 function updateMarqueeAnimation() {
   const marquee = document.querySelector('.projects__marquee');
@@ -9,21 +12,11 @@ function updateMarqueeAnimation() {
   );
 }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-});
-
-const hiddenElements = document.querySelectorAll('.hidden');
-const altHiddenElements = document.querySelectorAll('.hidden--alt');
-hiddenElements.forEach((el) => observer.observe(el));
-altHiddenElements.forEach((el) => observer.observe(el));
-
 updateMarqueeAnimation(); // initial render
-
 window.addEventListener('resize', updateMarqueeAnimation);
+
+// observer for sliding animation
+
+const observerProjects = createObserver('show');
+const hiddenElements = document.querySelectorAll('.hidden--projects');
+hiddenElements.forEach((el) => observerProjects.observe(el));
