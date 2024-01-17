@@ -1,0 +1,35 @@
+@use '../variables/colors.scss' as *;
+@use '../utils/marquee.scss' as *;
+
+.section--contact {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $white;
+}
+
+
+.contact__marquee {
+  @extend %marquee-container;
+  background-color: $pink;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-text--contact {
+  @extend %marquee-text;
+  font-size: 28px;
+  -webkit-text-fill-color: $white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $white;
+}
+
+
+.contact__marquee-background :nth-child(even) {
+  animation-delay: 200s;
+}
+
+

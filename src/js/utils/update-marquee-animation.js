@@ -1,9 +1,6 @@
-function getNewAnimationDuration(marquee, marqueeText) {
+function getNewAnimationDuration(marquee, marqueeText, speed = 70 ) {
   const marqueeWidth = marquee.offsetWidth;
   const textWidth = marqueeText.offsetWidth;
-
-  // Speed factor (pixels per second)
-  const speed = 70;
 
   // Calculate the duration
   const duration = (marqueeWidth + textWidth) / speed;
