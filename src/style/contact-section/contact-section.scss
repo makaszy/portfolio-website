@@ -6,7 +6,6 @@
   background-color: $white;
 }
 
-
 .contact__marquee {
   @extend %marquee-container;
   background-color: $pink;
@@ -18,19 +17,26 @@
   overflow: hidden;
 }
 
-.marquee-text--contact, .marquee-text--contact-alt {
+.marquee-text--contact,
+.marquee-text--contact-alt {
   font-size: 28px;
   -webkit-text-fill-color: $white;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $white;
-
+}
+.marquee-text--contact :nth-child(even),
+.marquee-text--contact-alt :nth-child(even) {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $white;
 }
 
 .marquee-text--contact {
   @extend %marquee-text;
-  
 }
 
 .marquee-text--contact-alt {
   @extend %marquee-text--alt;
 }
+
+

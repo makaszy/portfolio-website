@@ -5,6 +5,7 @@ function updateContactMarqueeAnimation() {
   const marqueeText = document.querySelectorAll('.marquee-text--contact');
   const marqueeTextAlt = document.querySelectorAll('.marquee-text--contact-alt');
   marqueeText.forEach((marqueeTxt) => {
+    // eslint-disable-next-line no-param-reassign
     marqueeTxt.style.animationDuration = getNewAnimationDuration(
       marquee,
       marqueeTxt, 70
@@ -12,6 +13,7 @@ function updateContactMarqueeAnimation() {
   })
 
   marqueeTextAlt.forEach((marqueeTxt) => {
+    // eslint-disable-next-line no-param-reassign
     marqueeTxt.style.animationDuration = getNewAnimationDuration(
       marquee,
       marqueeTxt, 120
