@@ -4,6 +4,7 @@
 .section--contact {
   width: 100%;
   background-color: $white;
+  position: relative;
 }
 
 .contact__marquee {
@@ -39,4 +40,21 @@
   @extend %marquee-text--alt;
 }
 
+.contact__info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8%;
+  z-index: 1;
+  background-color: $black;
+  color: $white;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+.info__heading {
+  text-align: center;
+}
