@@ -11,9 +11,9 @@
   animation: marquee linear infinite;
 }
 
-%marquee-text--right {
+%marquee-text--alt {
   @extend %marquee-text;
-  animation: marquee-right linear infinite;
+  animation: marquee-alt linear infinite;
 }
 
 
@@ -27,7 +27,7 @@
 }
 
 
-@keyframes marquee-right {
+@keyframes marquee-alt {
   0% {
     transform: translateX(-50%);
   }
