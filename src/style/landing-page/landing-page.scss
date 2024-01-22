@@ -1,5 +1,6 @@
 @use '../utils/marquee.scss';
 @use '../variables/colors.scss';
+@use '../variables/breakpoints.scss' as *;
 
 .landing-page__marquee {
   @extend %marquee-container;
@@ -43,4 +44,51 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: colors.$sidebar-color;
   -webkit-text-fill-color: colors.$sidebar-background;
+}
+
+.landing-page__scroll-icon {
+  opacity: 0;
+  transition: opacity 0.5s;
+  position: absolute;
+  bottom: 26px;
+  right: 15px;
+}
+
+.wrapper--scroll-icon {
+  //used as a background for the scroll icon
+  position: relative;
+  background-color: colors.$white;
+  width: 26px; //has to be even and bigger than the scroll-icon svg
+  height: 26px;
+  border-radius: 50%;
+}
+
+.scroll-icon {
+  position: absolute; //absolutely center the scroll icon svg
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: $medium-screen) and (max-width: $large-screen) {
+  .landing-page__header,
+  .header--alt-clr {
+    font-size: 76px;
+  }
+  .landing-page__subheader {
+    font-size: 60px;
+  }
+}
+
+@media screen and (min-width: $large-screen) {
+  .landing-page__header,
+  .header--alt-clr {
+    font-size: 96px;
+  }
+  .landing-page__subheader {
+    font-size: 80px;
+  }
+  .landing-page__scroll-icon {
+    opacity: 1;
+  }
 }
