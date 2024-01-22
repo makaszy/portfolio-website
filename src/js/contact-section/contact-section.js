@@ -32,3 +32,21 @@ window.addEventListener('resize', updateContactMarqueeAnimation); // initial ren
 const observerContact = createObserver('show--contact-info');
 const contactInfo = document.querySelector('.contact__info');
 observerContact.observe(contactInfo);
+
+// handling contact icons
+
+function openEmail() {
+  window.location.href = 'mailto:example@example.com';
+}
+
+function handleContactIcon(event) {
+  if (event.type === 'click' || event.key === 'Enter') {
+    openEmail();
+  }
+}
+
+const contactIcons = document.querySelector('.info-icon--email');
+
+contactIcons.addEventListener('click', handleContactIcon);
+
+contactIcons.addEventListener('keydown', handleContactIcon);
