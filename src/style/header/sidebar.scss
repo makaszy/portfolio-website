@@ -1,5 +1,6 @@
 @use '../variables/colors.scss';
 @use './hamburger.scss' as *;
+@use '../variables/breakpoints.scss' as *;
 
 .sidebar {
   position: fixed;
@@ -14,7 +15,7 @@
   font-size: 27px;
   transition: width 0.7s;
   overflow: hidden;
-  z-index: 8; //to prevent marquee from overlapping
+  z-index: 3; //to prevent heading from overlapping
 }
 
 nav {
@@ -76,4 +77,11 @@ nav {
 .nav__link:hover,
 .nav__link:focus {
   background-size: 100% 3px;
+}
+
+// style for large screens
+
+@media screen and (min-width: $large-screen) {
+
+
 }
