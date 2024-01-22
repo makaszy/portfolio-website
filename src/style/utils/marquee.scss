@@ -11,11 +11,27 @@
   animation: marquee linear infinite;
 }
 
+%marquee-text--alt {
+  @extend %marquee-text;
+  animation: marquee-alt linear infinite;
+}
+
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+
+@keyframes marquee-alt {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }

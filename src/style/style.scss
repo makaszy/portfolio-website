@@ -12,6 +12,7 @@
 @use './projects-section/projects-section.scss';
 @use './about-me-section/about-me-section.scss';
 @use './utils/show.scss';
+@use './contact-section/contact-section.scss';
 
 html,
 body {
@@ -20,4 +21,3 @@ body {
   height: 100%;
   font-family: $font;
 }
-

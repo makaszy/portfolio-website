@@ -37,7 +37,6 @@
 
 .project-list__li {
   position: relative;
-  z-index: 6;
   width: 80%;
   max-width: 400px;
 }
@@ -50,7 +49,6 @@
 }
 
 .project {
-  z-index: 7;
   color: $pink;
   display: flex;
   flex-direction: column;
