@@ -21,12 +21,22 @@ $left-distance: 75px; // used for absolute position elements [signature]
 }
 
 .landing-page {
+  position: relative;
   width: 100vw;
   height: 100vh;
+}
+
+.landing-page__headings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .landing-page__header {
@@ -58,7 +68,9 @@ $left-distance: 75px; // used for absolute position elements [signature]
   font-size: 24px;
 }
 
-.landing-page__signature, .landing-page__scroll-icon { //hidden on smaller screens
+.landing-page__signature,
+.landing-page__scroll-icon {
+  //hidden on smaller screens
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -103,7 +115,8 @@ $left-distance: 75px; // used for absolute position elements [signature]
   .landing-page__subheader {
     font-size: 80px;
   }
-  .landing-page__scroll-icon, .landing-page__signature {
+  .landing-page__scroll-icon,
+  .landing-page__signature {
     opacity: 1;
   }
 }
