@@ -34,11 +34,11 @@
 }
 
 .marquee-text--contact {
-  @extend %marquee-text;
+  @include marquee-text($horizontal);
 }
 
 .marquee-text--contact-alt {
-  @extend %marquee-text--alt;
+  @include marquee-text($horizontal-alt);
 }
 
 .contact__info {

@@ -1,10 +1,17 @@
 @use '../utils/marquee.scss' as *;
 @use '../variables/colors.scss' as *;
+@use '../variables/breakpoints.scss' as *;
 
 .section--projects {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  padding-bottom: 50px;
 }
 
 .projects__marquee {
@@ -23,7 +30,14 @@
   font-size: 28px;
   color: $pink;
   font-weight: 900;
-  @extend %marquee-text;
+  @include marquee-text($horizontal);
+}
+
+.projects__project-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
 }
 
 .project-list {
@@ -31,13 +45,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 0%;
   gap: 100px;
 }
 
 .project-list__li {
   position: relative;
-  width: 80%;
+  width: 100%;
   max-width: 400px;
 }
 
@@ -115,5 +128,60 @@
 @media (prefers-reduced-motion) {
   .hidden--projects {
     transition: none;
+  }
+}
+
+@media screen and (min-width: $large-screen) {
+  .section--projects {
+    position: relative;
+    width: 100%;
+    min-width: 250vh;
+    height: 100vh;
+    overflow-y: hidden;
+    flex-direction: row;
+    gap: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    align-items: center;
+  }
+  
+   .project-list__li {
+    max-width: 900px;
+   }
+
+  // marquee
+
+  .projects__marquee {
+    width: 200px;
+    height: 100%;
+    border: 2px solid black;
+    border-bottom: 0px;
+    border-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marquee-text--projects {
+    writing-mode: vertical-rl;
+    @include marquee-text($vertical);
+    font-size: 48px;
+  }
+
+  .project-list {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 50px;
+    width: 100%;
+  }
+
+  .hidden--projects {
+    transform: translateY(-100%);
+  }
+
+  .hidden--projects:nth-of-type(even) {
+    transform: translateY(100%);
   }
 }

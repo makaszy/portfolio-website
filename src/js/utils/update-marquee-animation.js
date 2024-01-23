@@ -1,11 +1,30 @@
-function getNewAnimationDuration(marquee, marqueeText, speed = 70 ) {
-  const marqueeWidth = marquee.offsetWidth;
-  const textWidth = marqueeText.offsetWidth;
+function getNewAnimationDuration(
+  marquee,
+  marqueeText,
+  speed = 70,
+  position = 'horizontal',
+) {
+  // check if function parameters are correct
+  if (typeof speed !== 'number') {
+    throw new Error('Speed parameter must be a number');
+  }
+  if (position !== 'horizontal' && position !== 'vertical') {
+    throw new Error(
+      'Position parameter must be either "horizontal" or "vertical"',
+    );
+  }
+  // if marquee is horizontal use width, if vertical use height
+  const marqueeSize =
+    position === 'horizontal' ? marquee.offsetWidth : marquee.offsetHeight;
+  const textSize =
+    position === 'horizontal'
+      ? marqueeText.offsetWidth
+      : marqueeText.offsetHeight;
 
-  // Calculate the duration
-  const duration = (marqueeWidth + textWidth) / speed;
+  // calculate the duration
+  const duration = (marqueeSize + textSize) / speed;
 
-  // Apply the duration to the animation
+  // turn duration into a string
   const newAnimationDuration = `${duration}s`;
   return newAnimationDuration;
 }

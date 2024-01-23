@@ -1,4 +1,4 @@
-@use '../utils/marquee.scss';
+@use '../utils/marquee.scss' as *;
 @use '../variables/colors.scss';
 @use '../variables/breakpoints.scss' as *;
 
@@ -16,7 +16,7 @@ $left-distance: 75px; // used for absolute position elements [signature]
 }
 
 .marquee-text--landing-page {
-  @extend %marquee-text;
+  @include marquee-text($horizontal);
   font-size: 18px;
 }
 

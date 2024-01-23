@@ -1,5 +1,13 @@
+@use '../variables/breakpoints.scss' as *;
+
 .show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0) !important;
+}
+
+@media screen and (min-width: $large-screen) { // have the items appear from the top/bottom instead of the sides
+  .show {
+    transform: translateY(0) !important;
+  }
 }
