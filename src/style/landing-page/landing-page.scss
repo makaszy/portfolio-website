@@ -2,11 +2,15 @@
 @use '../variables/colors.scss';
 @use '../variables/breakpoints.scss' as *;
 
+$top-bottom-distance: 26px; // used for absolute position elements [marquee, signature, scroll-icon]
+$right-distance: 15px; // used for absolute position elements [marquee, scroll-icon]
+$left-distance: 75px; // used for absolute position elements [signature]
+
 .landing-page__marquee {
   @extend %marquee-container;
   position: absolute;
-  top: 26px;
-  right: 15px;
+  top: $top-bottom-distance;
+  right: $right-distance;
   width: 30%;
   max-width: 300px;
 }
@@ -46,12 +50,23 @@
   -webkit-text-fill-color: colors.$sidebar-background;
 }
 
-.landing-page__scroll-icon {
+.landing-page__signature {
+  opacity: 0;
+  position: absolute;
+  top: $top-bottom-distance;
+  left: $left-distance;
+  font-size: 24px;
+}
+
+.landing-page__signature, .landing-page__scroll-icon { //hidden on smaller screens
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.landing-page__scroll-icon {
   position: absolute;
-  bottom: 26px;
-  right: 15px;
+  bottom: $top-bottom-distance;
+  right: $right-distance;
 }
 
 .wrapper--scroll-icon {
@@ -88,7 +103,7 @@
   .landing-page__subheader {
     font-size: 80px;
   }
-  .landing-page__scroll-icon {
+  .landing-page__scroll-icon, .landing-page__signature {
     opacity: 1;
   }
 }
