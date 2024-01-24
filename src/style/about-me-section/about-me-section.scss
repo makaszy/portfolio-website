@@ -1,5 +1,6 @@
 @use '../variables/colors.scss' as *;
 @use '../utils/marquee.scss' as *;
+@use '../variables/breakpoints.scss' as *;
 
 .section--about {
   width: 100%;
@@ -19,6 +20,7 @@
   border-top: 2px solid $black;
   border-bottom: 2px solid $black;
 }
+
 .marquee-text--about {
   @include marquee-text($horizontal);
   font-size: 28px;
@@ -26,6 +28,7 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $white;
 }
+
 .marquee-text--about :nth-child(even) {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
@@ -107,4 +110,18 @@
 .override-color--sidebar-btn::after,
 .override-color--sidebar-btn::before {
   border-color: #1f1f1f;
+}
+
+@media screen and (min-width: $large-screen) {
+  .about__marquee {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .marquee-text--about {
+    font-size: 48px;
+  }
 }

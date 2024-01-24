@@ -1,4 +1,4 @@
-const scrollSpeedMultiplier = 10;
+const scrollSpeedMultiplier = 2;
 
 const handleHorizontalScroll = function (event) {
   if (event.deltaY != 0) {

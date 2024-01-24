@@ -5,7 +5,7 @@ import createObserver from '../utils/create-observer';
 
 function updateMarqueeAnimation() {
   const marquee = document.querySelector('.projects__marquee');
-  const marqueeText = document.querySelector('.marquee-text--projects');
+  const marqueeTexts = document.querySelectorAll('.marquee-text--projects');
 
   var width =
     window.innerWidth ||
@@ -13,17 +13,22 @@ function updateMarqueeAnimation() {
     document.body.clientWidth;
   // adjust speed for vertical animation based on screen size
   if (width < 1200) {
-    marqueeText.style.animationDuration = getNewAnimationDuration(
-      marquee,
-      marqueeText,
+    marqueeTexts.forEach(
+      (marqueeText) =>
+        (marqueeText.style.animationDuration = getNewAnimationDuration(
+          marquee,
+          marqueeText,
+        )),
     );
   } else {
-    marqueeText.style.animationDuration = getNewAnimationDuration(
-      marquee,
-      marqueeText,
-      undefined, // use the default value of 70
-      'vertical',
-    );
+    marqueeTexts.forEach((marqueeText) => {
+      marqueeText.style.animationDuration = getNewAnimationDuration(
+        marquee,
+        marqueeText,
+        undefined, // use the default value of 70
+        'vertical',
+      );
+    });
   }
 }
 

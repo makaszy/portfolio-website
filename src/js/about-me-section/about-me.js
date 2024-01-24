@@ -1,14 +1,27 @@
 import getNewAnimationDuration from '../utils/update-marquee-animation';
 import createObserver from '../utils/create-observer';
-
-function updateMarqueeAnimation() {
+ 
+/* function updateMarqueeAnimation() {
   const marquee = document.querySelector('.about__marquee');
   const marqueeText = document.querySelector('.marquee-text--about');
   marqueeText.style.animationDuration = getNewAnimationDuration(
     marquee,
     marqueeText,
   );
+}  */
+
+function updateMarqueeAnimation() {
+  const marquee = document.querySelector('.about__marquee');
+  const marqueeTexts = document.querySelectorAll('.marquee-text--about');
+  marqueeTexts.forEach((marqueeText) => {
+    marqueeText.style.animationDuration = getNewAnimationDuration(
+      marquee,
+      marqueeText,
+    );
+
+  })
 }
+ 
 updateMarqueeAnimation(); // initial render
 window.addEventListener('resize', updateMarqueeAnimation);
 

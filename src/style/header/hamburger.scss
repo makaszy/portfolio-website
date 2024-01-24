@@ -11,12 +11,6 @@ $open-middle-bar-color: $black; //for hiding the middle bar when open
   --closed-color: #{$black};
   --border: #{$white};
 }
-@media screen and (min-width: $large-screen) { // for large screens
-  :root {
-    --closed-color: #{$white}; 
-    --border: #{$black};
-  }
-}
 
 %btn--hamburger {
   position: absolute;
@@ -91,3 +85,9 @@ $open-middle-bar-color: $black; //for hiding the middle bar when open
   transform: rotate(-135deg);
 }
 
+@media screen and (min-width: $large-screen) { // for large screens
+  :root {
+    --closed-color: #{$white}; 
+    --border: #{$black};
+  }
+}
