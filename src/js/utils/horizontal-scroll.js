@@ -1,9 +1,11 @@
+const scrollSpeedMultiplier = 10;
+
 const handleHorizontalScroll = function (event) {
   if (event.deltaY != 0) {
     // Prevent vertical scrolling
     event.preventDefault();
     // Scroll horizontally instead
-    this.scrollLeft += event.deltaY + event.deltaX;
+    this.scrollLeft += (event.deltaY + event.deltaX) * scrollSpeedMultiplier;
   }
 };
 
