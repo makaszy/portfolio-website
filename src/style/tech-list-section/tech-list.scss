@@ -1,9 +1,11 @@
 @use '../variables/colors.scss' as *;
 @use '../variables/breakpoints.scss' as *;
+@use '../utils/intesection-decoration.scss' as *;
 
  
 /* Base styles for the tech list section */
 .section--tech-list {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +76,16 @@
   flex-direction: column;
 }
 
+.inter-section-decoration--tech-list {
+  @include intersection-decoration($color: $black);
+  top: 0px;
+}
+
+
 @media screen and (min-width: $large-screen) {
+  .section--tech-list {
+    width: 85vw;
+  }
   .tech-list {
     grid-template-columns: repeat(3, minmax(185px, 1fr)); /* Larger min size for wider screens */
     max-width: fit-content;

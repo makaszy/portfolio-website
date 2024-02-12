@@ -1,0 +1,9 @@
+@mixin intersection-decoration($color) {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  width: 5px;
+  height: 25px;
+  background-color: $color; 
+}

@@ -1,10 +1,12 @@
 @use '../variables/colors.scss' as *;
 @use '../utils/marquee.scss' as *;
 @use '../variables/breakpoints.scss' as *;
+@use '../utils/intesection-decoration.scss' as *;
 
 .section--about {
   width: 100%;
   background-color: $black;
+  position: relative;
 }
 
 .about__marquee {
@@ -55,8 +57,14 @@
   text-align: justify;
   max-width: 300px;
 }
+.inter-section-decoration--about {
+  @include intersection-decoration($color: $white);
+  bottom: 0px;
+}
 
 @media screen and (min-width: $large-screen) {
+ 
+  
   .about__marquee {
     height: 100px;
     display: flex;
@@ -83,6 +91,7 @@
   }
 
   .info__img {
+    display: none;
     float: left; 
     width: 350px;
     height: 350px;
