@@ -63,8 +63,7 @@
 }
 
 @media screen and (min-width: $large-screen) {
- 
-  
+
   .about__marquee {
     height: 100px;
     display: flex;
@@ -78,7 +77,8 @@
     white-space: normal;
   }
 
-  .img-wrapper--info, .info__img {
+  .img-wrapper--info,
+  .info__img {
     width: 350px;
     height: 350px;
     position: relative;
@@ -92,23 +92,28 @@
 
   .info__img {
     display: none;
-    float: left; 
+    float: left;
     width: 350px;
     height: 350px;
-    border-radius: 50%; 
-    shape-outside: circle(); 
-    margin-right: 20px; 
-    margin-bottom: 20px; 
+    border-radius: 50%;
+    shape-outside: circle();
+    margin-right: 20px;
+    margin-bottom: 20px;
   }
-  
+
   .info__text {
-    max-width: 100%; 
+    max-width: 100%;
     font-size: 32px;
   }
-  
+
   .about__info::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
- }
+  
+  .inter-section-decoration--about {
+    @include intersection-decoration($color: $white);
+    right: 0px;
+  }
+}
