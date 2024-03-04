@@ -2,7 +2,6 @@
 @use '../variables/breakpoints.scss' as *;
 @use '../utils/intesection-decoration.scss' as *;
 
- 
 /* Base styles for the tech list section */
 .section--tech-list {
   position: relative;
@@ -35,7 +34,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(50px, 1fr));
   gap: 10px;
-  width: 100%; 
+  width: 100%;
   max-width: 300px;
 }
 
@@ -52,13 +51,19 @@
 .hidden--tech-list {
   opacity: 0;
   filter: blur(2px);
-  transition: opacity 1s, transform 1s; /* Optimized transition property */
+  transition:
+    opacity 1s,
+    transform 1s; /* Optimized transition property */
   transform: translateX(-100%);
 }
 
 /* Staggered animation delays */
-.hidden--tech-list:nth-child(2n) { transition-delay: 200ms; }
-.hidden--tech-list:nth-child(3n) { transition-delay: 400ms; }
+.hidden--tech-list:nth-child(2n) {
+  transition-delay: 200ms;
+}
+.hidden--tech-list:nth-child(3n) {
+  transition-delay: 400ms;
+}
 
 /* Sidebar button color overrides */
 .override-color--sidebar-btn,
@@ -80,24 +85,31 @@
   @include intersection-decoration($color: $black);
   top: 0px;
 }
-
+@media screen and (max-width: $large-screen) {
+  .inter-section-decoration--tech-list.extend-decor {
+    height: 25px;
+  }
+}
 
 @media screen and (min-width: $large-screen) {
   .section--tech-list {
     width: 85vw;
   }
+
   .inter-section-decoration--tech-list {
     @include intersection-decoration($color: $black);
     left: 0px;
-    transition: 1s all;
+  }
+
+  .inter-section-decoration--tech-list.extend-decor {
+    width: 75px;
   }
 
   .tech-list {
-    grid-template-columns: repeat(3, minmax(185px, 1fr)); /* Larger min size for wider screens */
+    grid-template-columns: repeat(
+      3,
+      minmax(185px, 1fr)
+    ); /* Larger min size for wider screens */
     max-width: fit-content;
   }
 }
-
-.extend-decor {
-  width: 75px;
-} 

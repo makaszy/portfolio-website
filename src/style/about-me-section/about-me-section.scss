@@ -57,19 +57,26 @@
   text-align: justify;
   max-width: 300px;
 }
+
 .inter-section-decoration--about {
   @include intersection-decoration($color: $white);
   bottom: 0px;
 }
 
-@media screen and (min-width: $large-screen) {
+@media screen and (max-width: $large-screen) {
+  .inter-section-decoration--about.extend-decor {
+    height: 25px;
+  }
+}
 
+@media screen and (min-width: $large-screen) {
   .about__marquee {
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .about__info {
     width: 700px;
     margin: 10% auto;
@@ -111,15 +118,13 @@
     display: table;
     clear: both;
   }
-  
+
   .inter-section-decoration--about {
     @include intersection-decoration($color: $white);
     right: 0px;
-    transition: 1s all;
   }
-  
 
+  .inter-section-decoration--about.extend-decor {
+    width: 75px;
+  }
 }
-.extend-decor {
-  width: 75px;
-} 
