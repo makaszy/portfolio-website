@@ -1,6 +1,7 @@
 import getNewAnimationDuration from '../utils/update-marquee-animation';
 import createObserver from '../utils/create-observer';
- 
+import decorObserver from '../utils/decorObserver';
+
 /* function updateMarqueeAnimation() {
   const marquee = document.querySelector('.about__marquee');
   const marqueeText = document.querySelector('.marquee-text--about');
@@ -18,10 +19,9 @@ function updateMarqueeAnimation() {
       marquee,
       marqueeText,
     );
-
-  })
+  });
 }
- 
+
 updateMarqueeAnimation(); // initial render
 window.addEventListener('resize', updateMarqueeAnimation);
 
@@ -29,6 +29,10 @@ window.addEventListener('resize', updateMarqueeAnimation);
 const observerAbout = createObserver('show');
 const hiddenElements = document.querySelectorAll('.hidden--tech-list');
 hiddenElements.forEach((el) => observerAbout.observe(el));
+
+//observe intersection decoration
+const interDecor = document.querySelector('.inter-section-decoration--about');
+decorObserver.observe(interDecor);
 
 // observe last item on the tech-list and overrides sidebar-btn color to fit the background
 

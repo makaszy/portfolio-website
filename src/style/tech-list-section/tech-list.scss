@@ -89,9 +89,15 @@
   .inter-section-decoration--tech-list {
     @include intersection-decoration($color: $black);
     left: 0px;
+    transition: 1s all;
   }
+
   .tech-list {
     grid-template-columns: repeat(3, minmax(185px, 1fr)); /* Larger min size for wider screens */
     max-width: fit-content;
   }
 }
+
+.extend-decor {
+  width: 75px;
+} 

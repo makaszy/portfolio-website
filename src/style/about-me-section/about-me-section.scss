@@ -115,5 +115,11 @@
   .inter-section-decoration--about {
     @include intersection-decoration($color: $white);
     right: 0px;
+    transition: 1s all;
   }
+  
+
 }
+.extend-decor {
+  width: 75px;
+} 
