@@ -66,3 +66,19 @@ function updateHeadingOnResize() {
 
 window.addEventListener('resize', updateHeadingOnResize);
 updateHeadingOnResize();
+
+//Create rotating contact me decoration
+
+function addDecorationText() {
+  const decoration = document.querySelector('.decoration--contact-me');
+  const strTxt = 'CONTACT ME CONTACT ME CONTACT ME';
+  for (let i = 0; i < strTxt.length; i++) {
+    let span = document.createElement('span');
+    span.classList.add('decoration-span--contact-me');
+    span.innerHTML = strTxt[i];
+    decoration.appendChild(span);
+    span.style.transform = `rotate(${11 * i}deg)`;
+  }
+}
+
+window.onload = addDecorationText;

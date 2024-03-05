@@ -97,6 +97,9 @@
   justify-content: center;
   align-items: center;
 }
+.decoration--contact-me {
+  display: none;
+}
 
 @media screen and (min-width: $large-screen) {
   .contact__marquee-background {
@@ -130,5 +133,36 @@
   .info__heading--span {
     -webkit-text-fill-color: $black;
     -webkit-text-stroke-color: $white;
+  }
+  
+  .decoration--contact-me {
+    display: block;
+    position: absolute;
+    top: 320px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    animation: rotate-effect 20s linear infinite;
+    z-index: 3;
+  }
+
+  @keyframes rotate-effect {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .decoration-span--contact-me {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0 100px;
+    color: $white;
+    z-index: 20;
   }
 }
