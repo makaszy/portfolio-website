@@ -50,3 +50,19 @@ const contactIcons = document.querySelector('.info-icon--email');
 contactIcons.addEventListener('click', handleContactIcon);
 
 contactIcons.addEventListener('keydown', handleContactIcon);
+
+//update contact heading based on size of screen
+
+function updateHeadingOnResize() {
+  const heading = document.querySelector('.info__heading');
+
+  // Determine the text content based on the screen width
+  const textContent =
+    window.innerWidth > 1200
+      ? `Let's make<br> something <span class="info__heading--span">fun</span><br> together!`
+      : `Let's work together!`;
+  heading.innerHTML = textContent;
+}
+
+window.addEventListener('resize', updateHeadingOnResize);
+updateHeadingOnResize();

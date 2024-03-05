@@ -87,6 +87,7 @@ nav {
 
 @media screen and (min-width: $large-screen) {
   .sidebar {
+    z-index: 5;
     width: 50px;
     flex-direction: column;
     justify-content: center;
