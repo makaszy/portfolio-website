@@ -6,6 +6,15 @@ $top-bottom-distance: 26px; // used for absolute position elements [marquee, sig
 $right-distance: 15px; // used for absolute position elements [marquee, scroll-icon]
 $left-distance: 75px; // used for absolute position elements [signature]
 
+.limelight-regular {
+  font-family: 'Limelight', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.header-letter-span {
+  position: relative;
+}
+
 .landing-page__marquee {
   @extend %marquee-container;
   position: absolute;
@@ -40,24 +49,43 @@ $left-distance: 75px; // used for absolute position elements [signature]
 }
 
 .landing-page__header {
-  font-size: 33px;
+  font-size: 60px;
   z-index: 2;
   -webkit-text-fill-color: colors.$sidebar-color;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: colors.$sidebar-background;
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 .header--alt-clr {
-  font-size: 34px;
   -webkit-text-stroke-color: colors.$sidebar-color;
   -webkit-text-fill-color: colors.$sidebar-background;
 }
 
-.landing-page__subheader {
-  z-index: 2;
-  font-size: 30px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: colors.$sidebar-color;
-  -webkit-text-fill-color: colors.$sidebar-background;
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .landing-page__signature {
@@ -97,24 +125,31 @@ $left-distance: 75px; // used for absolute position elements [signature]
   transform: translate(-50%, -50%);
 }
 
-@media (min-width: $medium-screen) and (max-width: $large-screen) {
-  .landing-page__header,
-  .header--alt-clr {
-    font-size: 76px;
-  }
-  .landing-page__subheader {
-    font-size: 60px;
-  }
-}
-
-@media screen and (min-width: $large-screen) {
+@media screen and (min-width: $medium-screen) {
   .landing-page__header,
   .header--alt-clr {
     font-size: 96px;
   }
-  .landing-page__subheader {
-    font-size: 80px;
+
+  .header--alt-background {
+    position: relative;
   }
+  
+  .header--alt-background::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    background-color: colors.$black;
+  }
+}
+
+@media screen and (min-width: $large-screen) {
   .landing-page__scroll-icon,
   .landing-page__signature {
     opacity: 1;
