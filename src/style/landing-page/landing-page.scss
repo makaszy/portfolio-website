@@ -6,11 +6,7 @@ $top-bottom-distance: 26px; // used for absolute position elements [marquee, sig
 $right-distance: 15px; // used for absolute position elements [marquee, scroll-icon]
 $left-distance: 75px; // used for absolute position elements [signature]
 
-.limelight-regular {
-  font-family: 'Limelight', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 .header-letter-span {
   position: relative;
 }
@@ -134,7 +130,7 @@ $left-distance: 75px; // used for absolute position elements [signature]
   .header--alt-background {
     position: relative;
   }
-  
+
   .header--alt-background::before {
     content: '';
     position: absolute;
