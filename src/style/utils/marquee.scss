@@ -6,15 +6,8 @@
   position: relative;
 }
 
-/* %marquee-text {
-  font-family: sans-serif;
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee-horizontal linear infinite;
-} */
-
 @mixin marquee-text($animation) {
-  font-family: sans-serif;
+  font-family: "League Spartan", sans-serif;
   display: inline-block;
   white-space: nowrap;
   animation: $animation linear infinite;

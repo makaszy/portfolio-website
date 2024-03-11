@@ -29,7 +29,7 @@
 .marquee-text--projects {
   font-size: 28px;
   color: $pink;
-  font-weight: 900;
+  font-weight: 700;
   @include marquee-text($horizontal);
 }
 
